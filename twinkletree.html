@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pregunta Navideña</title>
+  <style>
+    body {
+      background-image: url('images/fondo-navidad.jpg'); 
+      background-size: cover;      
+      background-repeat: no-repeat;  
+      background-attachment: fixed; 
+      background-position: center;  
+      
+      font-family: 'Arial', sans-serif;
+      color: white; 
+      text-align: center;
+      padding: 20px;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #2a9d8f;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #21867a;
+    }
+
+    p#mensaje {
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Resuelve la adivinanza:</h2>
+  <p>
+    No soy muñeco ni Santa Claus, aunque vivo entre luces y villancicos. 
+    Mi corazón era pequeño, frío como el hielo, y siempre miraba las fiestas con ceño fruncido. 
+    Odio los regalos y el ruido de la risa, mi escondite está en la montaña, alejado del pueblo. 
+    Pero, aunque intento arruinar la alegría de Navidad, una niña y un acto de bondad me hicieron cambiar. 
+    ¿Quién soy?
+  </p>
+  
+  <input type="text" id="respuesta" placeholder="Escribe tu respuesta aquí">
+  <button onclick="validarRespuesta()">Enviar</button>
+
+  <p id="mensaje"></p>
+
+  <p id="extra-text"> 
+    27 1 3
+    13 6 4 
+    9 3 15
+    16 2 17
+    2 1 5 
+    24 5 14
+    25 1 38
+    / 
+    4 2 5 
+    5 10 16
+    14 3 29
+    11 1 11
+    22 5 2 
+    6 3 7
+    8 10 20
+    18 3 11
+    25 5 31
+    1 1 2 
+    27 6 24
+  </p>
+
+  <script>
+    function validarRespuesta() {
+      const correctas = ["grinch", "el grinch"];
+      const userResp = document.getElementById("respuesta").value.trim().toLowerCase();
+      const mensaje = document.getElementById("mensaje");
+
+      if (correctas.includes(userResp)) {
+        mensaje.style.color = "lightgreen";
+        mensaje.textContent = "¡Correcto!";
+        window.open("grinch.pdf", "_blank");
+      } else {
+        mensaje.style.color = "red";
+        mensaje.textContent = "Respuesta incorrecta. Intenta otra vez.";
+      }
+    }
+  </script>
+  
+</body>
+</html>

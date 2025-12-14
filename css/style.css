@@ -13,3 +13,9 @@
   margin-top: 30px
   text-align: center;
 }
+
+.content {
+  background: rgba(0,0,0,0.6);
+  padding: 40.px;
+  border-radius: 10.px
+}
